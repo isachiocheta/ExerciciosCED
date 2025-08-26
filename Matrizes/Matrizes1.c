@@ -3,14 +3,13 @@
 #include <stdio.h>
 
 int main() {
-    int m[4][4];
-    for(int i=0;i<4;i++)
-        for(int j=0;j<4;j++)
-            scanf("%d", &m[i][j]);
+    int matriz[4][4];
+    for(int i=0; i<4; i++)
+        for(int j=0; j<4; j++)
+            scanf("%d", &matriz[i][j]);
 
-    printf("Diagonal principal:\n");
-    for(int i=0;i<4;i++)
-        printf("%d ", m[i][i]);
-
+    printf("Numeros digitados na diagonal principal:\n");
+    for(int i=0; i<4; i++)
+        printf("%d ", matriz[i][i]);
     return 0;
 }
