@@ -1,5 +1,5 @@
 // Faça uma função que receba um vetor e o seu tamanho como parâmetro e imprima o maior e o menor elemento do vetor. 
-//Esta função é do tipo void pois não retorna nenhum valor
+// Esta função é do tipo void pois não retorna nenhum valor
 
 #include <stdio.h>
 
@@ -15,7 +15,6 @@ void maiorMenor(int vetor[], int tamanho) {
             menor = vetor[i];
         }
     }
-
     printf("Maior valor: %d\n", maior);
     printf("Menor valor: %d\n", menor);
 }
@@ -28,8 +27,6 @@ int main() {
         printf("%d ", vetor[i]);
     }
     printf("\n");
-
     maiorMenor(vetor, 5);
-
     return 0;
 }
