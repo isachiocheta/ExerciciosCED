@@ -1,5 +1,6 @@
 //Retorna -1 se a data data1 é anterior à data data2, 1 se a data data1 é posterior à data data2 e 0 se as datas data1 e data2 são iguais.
 //int comparaDatas(Data data1, Data data2)
+//continuação do ex 07
 
 #include <stdio.h>
 
