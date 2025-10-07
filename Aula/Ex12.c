@@ -30,7 +30,6 @@ void listar(temperatura *inicio) {
     }
 }
 
-
 int main() {
     temperatura *inicio = NULL;
     int opcao;
