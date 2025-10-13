@@ -1,5 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+
+//Aula 07/10
+
 struct tdouble {
 	int value;
 	struct tdouble *next, *prev;
@@ -13,7 +16,10 @@ typedef struct tsent sentinela;
 
 void delValue (sentinela *s, int key){
     doub *p=s->head;
-    if (p==NULL) return;
+    if (p==NULL) {
+        printf("Lista vazia\n");
+        return;
+    }
     if (p->value==key){
         if (p->next==NULL){
             free(p);
@@ -26,8 +32,12 @@ void delValue (sentinela *s, int key){
         free(p);
         return;
     }
-    while (p!=NULL && p->value!=key) p=p->next;
-    if (p==NULL) return; 
+    while (p!=NULL && p->value!=key) {
+        p=p->next;
+    }
+    if (aux==NULL) {
+    return;
+    }
     if (p->next==NULL){
         s->tail=p->prev;
         s->tail->next=NULL;
@@ -39,7 +49,6 @@ void delValue (sentinela *s, int key){
     free(p);
     return;
 }
-
 
 void setValue (sentinela *s, int v)
 {

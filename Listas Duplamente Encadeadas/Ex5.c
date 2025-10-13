@@ -13,17 +13,39 @@ struct tsent{
 typedef struct tsent sentinela;
 
 void delValue(sentinela *s, int key){
-    doub *p=s->head;
-    if (p==NULL) return;
-    if (p->next==NULL){
-        free(p);
-        s->head=NULL;
-        s->tail=NULL;
+    doub *aux=s->head;
+
+    if (aux==NULL) {
+        printf("Lista vazia\n");
         return;
     }
-    s->head=p->next;
-    s->head->prev=NULL;
-    free(p);
+    if (aux->value==key){
+        if (aux->next==NULL){
+            free(aux);
+            s->head=NULL;
+            s->tail=NULL;
+            return;
+        }
+        s->head=aux->next;
+        s->head->prev=NULL;
+        free(aux);
+        return;
+    }
+    while (aux!=NULL && aux->value!=key) {
+        aux=aux->next;
+    }
+    if (aux==NULL) {
+        return;
+    }
+    if (aux->next==NULL){
+        s->tail=aux->prev;
+        s->tail->next=NULL;
+        free(aux);
+        return;
+    }
+    aux->prev->next=aux->next;
+    aux->next->prev=aux->prev;
+    free(aux);
     return;
 }
 

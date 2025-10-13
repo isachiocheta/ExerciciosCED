@@ -75,12 +75,12 @@ temperatura *delTemp(temperatura *f, float t) {
        printf("Temperatura nao encontrada na lista.\n");
        return f;
    }
-    if (aux->next == NULL) {//ultimo elemento
+    if (aux->next == NULL) {
        aux2->next=NULL;
        free(aux);
        return f;
     }
-    aux2->next=aux->next; //elemento do meio
+    aux2->next=aux->next;
     free(aux);
    return f;
 }
